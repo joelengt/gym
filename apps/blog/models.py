@@ -31,7 +31,7 @@ class Imagenes(models.Model):
 
     class Meta:
         verbose_name = 'Imagen'
-        verbose_name_plural = 'Imágenes'
+        verbose_name_plural = 'Imagenes'
 
     def __str__(self):
         return u'{0}'.format(self.nombre)
