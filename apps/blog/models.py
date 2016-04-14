@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from django.db import models
 from tinymce.models import HTMLField
 
@@ -36,7 +37,6 @@ class Imagenes(models.Model):
     def __str__(self):
         return u'{0}'.format(self.nombre)
 
-
 class Blog(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     titulo = models.CharField(max_length=250)
@@ -44,8 +44,7 @@ class Blog(models.Model):
     frase = models.CharField(max_length=250)
     imagen_frase = models.ImageField(upload_to='fraseimagen')
     fecha = models.DateField(auto_now=True)
-    categoria = models.CharField(max_length=40, choices=(
-        ('Actualidad', 'Actualidad'), ('Fitnes', 'Fitnes'), ('Nutricion', 'Nutrición')))
+    categoria = models.CharField(max_length=40, choices=(('Actualidad', 'Actualidad'), ('Fitnes', 'Fitnes'), ('Nutricion', 'Nutrición')))
     contenido = HTMLField()
     video = models.ManyToManyField(Video, related_name='videos', blank=True, null=True)
     facebook = models.URLField(null=True, blank=True)
